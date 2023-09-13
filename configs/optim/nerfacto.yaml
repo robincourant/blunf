@@ -1,0 +1,5 @@
+defaults:
+  - _self_
+  - field: adam_nerfacto.yaml
+  - proposal: adam.yaml
+  - scheduler: null

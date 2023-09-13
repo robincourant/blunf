@@ -1,0 +1,3 @@
+device: cuda
+world_size: 1
+local_rank: 0

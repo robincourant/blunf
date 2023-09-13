@@ -1,0 +1,18 @@
+# Pose optimization strategy to use. If enabled, we recommend SO3xR3.  Literal["off", "SO3xR3", "SE3"]
+mode: "off"
+
+# Noise to add to initial positions. Useful for debugging. float
+position_noise_std: 0.0
+# Noise to add to initial orientations. Useful for debugging. float
+orientation_noise_std: 0.0
+
+# ADAM parameters for camera optimization. float
+optimizer_lr: 6e-4
+optimizer_eps: 1e-15
+optimizer_wd: 1e-2
+# Learning rate scheduler for camera optimizer. int
+scheduler_steps: 10000
+
+# # Name of the parameter group used for pose optimization. Can be any string that doesn't conflict with other
+# # groups.
+# param_group: tyro.conf.Suppress[str] = "camera_opt"

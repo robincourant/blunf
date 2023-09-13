@@ -1,0 +1,4 @@
+name: stereo
+
+# Number of semantic classes
+num_semantic_classes: ${datamanager.dataparser.semantic.num_semantic_classes}

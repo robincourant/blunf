@@ -1,0 +1,5 @@
+name: adam
+
+lr: 5e-3 # 1e-1
+eps: 1e-15
+weight_decay: 0.0

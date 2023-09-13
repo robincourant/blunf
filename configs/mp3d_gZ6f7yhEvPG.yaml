@@ -1,0 +1,25 @@
+defaults:
+  - _self_
+  - datamanager: mp3d_gZ6f7yhEvPG.yaml
+  - model: blueprint_nerfacto.yaml
+  - trainer: vanilla.yaml
+  - optim: blueprint_nerfacto.yaml
+  - compnode: 1gpu.yaml
+
+method_name: ${model.name}
+# Experiment name. If None, will automatically be set to dataset name. str
+experiment_name: ${datamanager.dataparser.name}
+# Experiment timestamp. str
+timestamp: ${now:%Y-%m-%d_%H-%M-%S}
+# Relative or absolute output directory to save all checkpoints and logging. str
+output_dir: outputs/train
+# Which visualizer to use. Literal["viewer", "wandb", "tensorboard"]
+vis: wandb
+
+
+hydra:
+  run:
+    dir: ${output_dir}/${datamanager.dataparser.name}/${model.name}/${timestamp}
+  output_subdir: null
+
+

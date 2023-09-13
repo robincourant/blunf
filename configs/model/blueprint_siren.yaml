@@ -1,0 +1,9 @@
+name: blueprint_siren
+
+# Number of layers.
+num_layers: 2
+# Number of hidden neurons.
+hidden_dim: 256
+
+# Number of semantic classes
+num_semantic_classes: ${datamanager.dataparser.semantic.num_semantic_classes}

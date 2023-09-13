@@ -1,0 +1,7 @@
+max_num_iterations: 50001
+steps_per_eval_batch: 500
+steps_per_eval_image: 500
+steps_per_save: 500
+save_only_latest_checkpoint: False
+mixed_precision: True
+load_dir: null

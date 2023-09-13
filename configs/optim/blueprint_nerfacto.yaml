@@ -1,0 +1,4 @@
+defaults:
+  - _self_
+  - field: adam_nerfacto.yaml
+  - scheduler: null

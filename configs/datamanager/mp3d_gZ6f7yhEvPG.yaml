@@ -1,0 +1,52 @@
+defaults:
+  - _self_
+  # Specifies the camera pose optimizer used during training. Helpful if poses are noisy,
+  # such as for data from Record3D. CameraOptimizerConfig
+  - camera: off.yaml
+
+# Dataset directory
+data_dir: ${data_dir}
+
+# Class name
+name: blueprint
+
+# Number of points per batch to use per training iteration. int
+train_num_rays_per_batch: 50000
+# Number of images to sample during training iteration. int
+train_num_images_to_sample_from: -1
+# When not training on all images, number of iterations before picking new
+# images. If -1, never pick new images. int
+train_num_times_to_repeat_images: -1
+
+# Number of points per batch to use per eval iteration. int
+eval_num_points_per_batch: 50000
+# Number of images to sample during eval iteration. int
+eval_num_images_to_sample_from: -1
+# When not evaluating on all images, number of iterations before picking
+# new images. If -1, never pick new images. int
+eval_num_times_to_repeat_images: -1
+# Specifies the image indices to use during eval; if None, uses all.  Optional[Tuple[int, ...]]
+eval_image_indices: [0,]
+
+# The scale factor for scaling spatial data such as images, mask, semantics
+# along with relevant information about camera intrinsics. float
+camera_res_scale_factor: 1.0
+# Order of camera axis
+camera_calib: yxz
+# Offset on semantic indexing (1 for mp3d)
+semantic_offset: 1
+
+dataparser:
+  name: mp3d
+  semantic:
+    num_classes: 29
+    num_semantic_classes: 23
+    class_to_mask: [0, 5, 10, 17, 19, 22, 23]
+    class_to_keep: [1,  2,  3,  4,  6,  7,  8,  9, 11, 12, 13, 14, 15, 16, 18, 20, 21, 24, 25, 26, 27, 28, 29]
+  # Directory specifying location of data. str
+  data: null
+  # How much to scale the camera origins by. float
+  scale_factor: 1.0
+  # The percent of images to use for training
+  train_split_percentage: 0.45
+

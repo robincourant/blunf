@@ -1,0 +1,23 @@
+name: blueprint_nerfacto
+
+# Number of layers.
+num_layers: 2
+# Number of hidden neurons.
+hidden_dim: 64
+# Type of encoding to use {frequency, hashmap}.
+encoding_type: frequency
+# Number of frequencies for frequency encoding.
+n_frequencies: 12
+# Base resolution of the hashmap.
+base_res: 16
+# Maximum resolution of the hashmap.
+max_res: 1024
+# Number of features per level.
+features_per_level: 2
+# Number of levels of the hashmap.
+num_levels: 16
+# Size of the hashmap.
+log2_hashmap_size: 19
+
+# Number of semantic classes
+num_semantic_classes: ${datamanager.dataparser.semantic.num_semantic_classes}
